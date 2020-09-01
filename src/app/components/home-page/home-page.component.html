@@ -1,0 +1,9 @@
+<div class="home-page">
+    <div class="home-contents">
+        <div class="card" *ngFor="let item of list" [class.selected]="item.temperature > 20">
+            <div class="title">{{ item.name }}</div>
+            <div class="icon"></div>
+            <div class="temperature">{{ item.temperature }}</div>
+        </div>
+    </div>
+</div>
