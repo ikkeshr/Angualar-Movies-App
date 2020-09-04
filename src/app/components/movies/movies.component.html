@@ -1,0 +1,10 @@
+<div class="movies-page">
+    <app-movies-top-bar></app-movies-top-bar>
+    
+    <div class="movies-page-body">
+        <app-movies-sidebar (newItemEvent)="setTextFromSideMenu($event)"></app-movies-sidebar>
+        <app-movies-content [title]="textFromSideMenu"></app-movies-content>
+    </div>
+
+</div>
+

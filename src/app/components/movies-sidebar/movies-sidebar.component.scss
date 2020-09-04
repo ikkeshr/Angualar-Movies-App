@@ -1,0 +1,21 @@
+.sidebar {
+    background-color: black;
+    flex: 0;
+    height: 100%;
+    width: 200px;
+    float: left;
+
+    .side-item {
+        color: #818181;
+        display: block;
+        padding: 10px;
+        &.selected {
+               background-color: grey;
+               color: red;
+        }
+    }
+    .side-item:hover{
+        cursor: pointer;
+    }
+
+  }

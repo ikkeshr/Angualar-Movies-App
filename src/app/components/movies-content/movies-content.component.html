@@ -1,0 +1,12 @@
+<div class="component-wrapper">
+    <h3>{{ title }}</h3>
+    <div class="movie-card-wrapper">
+        <app-movie-card 
+            *ngFor="let item of skeletonFill" 
+            [movieTitle]="movieCard.title" 
+            [movieRating]="movieCard.rating"
+            [movieGenre]="movieCard.genre"
+            [moviePicUrl]="movieCard.picUrl"
+            ></app-movie-card>
+    </div>
+</div>
