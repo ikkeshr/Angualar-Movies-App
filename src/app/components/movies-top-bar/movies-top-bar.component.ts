@@ -7,21 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesTopBarComponent implements OnInit {
 
-  dropSettings: boolean;
+  dropSettings: boolean = false;
 
-  constructor() {
-    this.dropSettings = false;
-  }
+  constructor() {}
 
   ngOnInit(): void {
   }
 
   showSettings() {
-    if (this.dropSettings) {
-      this.dropSettings = false;
-    } else {
-      this.dropSettings = true;
-    }
+    this.dropSettings = !this.dropSettings;
   }
 
 }

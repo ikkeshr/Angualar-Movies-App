@@ -1,8 +1,26 @@
 <div class="topnav">
-    <i class="large material-icons" style="margin-top:10px;">insert_chart</i>
+    <!-- <i class="large material-icons" style="margin-top:10px;">insert_chart</i>
     <span class="logo">MEDIAPP</span>
     <div class="topnav-right" (click)="showSettings()">
         <i class="material-icons">settings</i>
+        <div class="dropdown-content" [class.selected]="dropSettings">
+            <p>Ikkesh Ramanna</p>
+            <p>Languages</p>
+            <p>Log out</p>
+        </div>
+    </div> -->
+    <div class="logo-wrap">
+        <i class="large material-icons">insert_chart</i>
+        <span>MEDIAPP</span>
+    </div>
+
+    <div class="search-wrap">
+        <span class="material-icons">search</span>
+        <input type="search" name="search" placeholder="Search movies" >
+    </div>
+
+    <div class="topnav-right" (click)="showSettings()">
+        <i class="material-icons settings-icon">settings</i>
         <div class="dropdown-content" [class.selected]="dropSettings">
             <p>Ikkesh Ramanna</p>
             <p>Languages</p>

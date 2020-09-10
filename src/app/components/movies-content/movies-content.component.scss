@@ -1,6 +1,8 @@
 .component-wrapper {
     padding: 25px;
-    
+    font-family: 'Open Sans', sans-serif; //Google Font
+    font-size: 14px;
+
     .movie-card-wrapper {
         display: flex;
         flex-wrap: wrap;

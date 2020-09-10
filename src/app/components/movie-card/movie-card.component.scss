@@ -37,3 +37,13 @@
         }
     }
 }
+.outer-most:hover {
+    cursor: pointer;
+    .image-container{
+        .movie-rating-wrapper{
+            .movie-rating{
+                background-color: red;
+            }
+        }
+    }
+}
