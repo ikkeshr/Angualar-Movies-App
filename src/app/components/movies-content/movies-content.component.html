@@ -2,19 +2,19 @@
     <h3>{{ title }}</h3>
     <div class="movie-card-wrapper">
         <app-movie-card 
-            *ngFor="let item of moviesFill" 
-            [movieTitle]="item.title" 
-            [movieRating]="item.rating"
-            [movieGenre]="item.genre"
-            [moviePicUrl]="item.picUrl"
+            *ngFor="let item of moviesToDisplay" 
+            [movieTitle]="item.getTitle()" 
+            [movieRating]="item.getRating()"
+            [movieGenre]="item.getGenreStr()"
+            [moviePicUrl]="getRandPoster()"
             ></app-movie-card>
 
-            <app-movie-card 
+            <!-- <app-movie-card 
             *ngFor="let item of moviesFill" 
             [movieTitle]="item.title" 
             [movieRating]="item.rating"
             [movieGenre]="item.genre"
             [moviePicUrl]="item.picUrl"
-            ></app-movie-card>
+            ></app-movie-card> -->
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -9,10 +9,11 @@ import { Output, EventEmitter } from '@angular/core';
 export class MoviesSidebarComponent implements OnInit {
 
   @Output() newItemEvent = new EventEmitter<string>();
+  @Input('movieGenres') movieGenres: string[] = ["Loading genres.."];
   nameSelected: string;
 
   constructor() {
-    this.nameSelected = "New Releases";
+    this.nameSelected = "Movies";
   }
 
   ngOnInit(): void {

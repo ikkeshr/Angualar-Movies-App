@@ -2,8 +2,8 @@
     <app-movies-top-bar></app-movies-top-bar>
     
     <div class="movies-page-body">
-        <app-movies-sidebar (newItemEvent)="setTextFromSideMenu($event)"></app-movies-sidebar>
-        <app-movies-content [title]="textFromSideMenu"></app-movies-content>
+        <app-movies-sidebar (newItemEvent)="setTextFromSideMenu($event)" [movieGenres]="movieGenres"></app-movies-sidebar>
+        <app-movies-content [title]="textFromSideMenu" [moviesToDisplay]="moviesListToDisplay"></app-movies-content>
     </div>
 
 </div>

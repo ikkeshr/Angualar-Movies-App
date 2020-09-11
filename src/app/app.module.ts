@@ -10,6 +10,8 @@ import { MoviesSidebarComponent } from './components/movies-sidebar/movies-sideb
 import { MoviesContentComponent } from './components/movies-content/movies-content.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
