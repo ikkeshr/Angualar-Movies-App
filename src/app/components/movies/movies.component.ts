@@ -22,9 +22,21 @@ export class MoviesComponent implements OnInit {
     this.getMoviesJson();
   }
 
+  //on side menu item seleted
   setTextFromSideMenu(text: string): void {
     this.textFromSideMenu = text;
     this.moviesListToDisplay = this.getMoviesByGenre(text);
+  }
+
+  getSearchValue(value: string): void {
+    // console.log("FROM MOVIES search: " + value);
+    // console.log(this.getMoviesByTitle(value));
+    this.setTextFromSideMenu("Search '" + value + "'");
+    this.moviesListToDisplay = this.getMoviesByTitle(value);
+
+    if (this.moviesListToDisplay.length < 1) {
+      this.setTextFromSideMenu("Search '" + value + "' - No Results");
+    }
   }
 
   getMoviesJson(): void {
@@ -62,6 +74,12 @@ export class MoviesComponent implements OnInit {
       }
     });
 
+    return movies;
+  }
+
+  getMoviesByTitle(title: string): Movie[] {
+    let re = new RegExp('^' + title, "i");
+    var movies = this.movieList.filter(m => re.test(m.getTitle()) );
     return movies;
   }
 

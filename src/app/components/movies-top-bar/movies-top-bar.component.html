@@ -4,12 +4,7 @@
         <span>MEDIAPP</span>
     </div>
 
-    <!-- <div class="search-wrap">
-        <span class="material-icons">search</span>
-        <input type="search" name="search" placeholder="Search movies" >
-    </div> -->
-
-    <app-searchbar></app-searchbar>
+    <app-searchbar (searchMovieTitle)="searchMovieByTitle($event)"></app-searchbar>
 
     <div class="topnav-right" (click)="showSettings()">
         <i class="material-icons settings-icon">settings</i>

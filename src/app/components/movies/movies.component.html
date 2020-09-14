@@ -1,5 +1,5 @@
 <div class="movies-page">
-    <app-movies-top-bar></app-movies-top-bar>
+    <app-movies-top-bar (searchMovieTitle)="getSearchValue($event)"></app-movies-top-bar>
     
     <div class="movies-page-body">
         <app-movies-sidebar (newItemEvent)="setTextFromSideMenu($event)" [movieGenres]="movieGenres"></app-movies-sidebar>
