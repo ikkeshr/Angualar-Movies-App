@@ -34,7 +34,13 @@ export class MoviesComponent implements OnInit {
         movie.setGenre(m.genres);
         movie.setPosterUrl(m.posterurl);
         movie.setRating(m.imdbRating);
-        movie.setTitle(m.originalTitle);
+        
+        if (m.originalTitle === "") {
+          movie.setTitle(m.title);
+        } else {
+          movie.setTitle(m.originalTitle);
+        }
+        
 
         this.movieList.push(movie);
       });

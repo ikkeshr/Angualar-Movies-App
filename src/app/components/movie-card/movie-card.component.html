@@ -1,6 +1,10 @@
 <div class="outer-most">
     <div class="image-container">
-        <img [src]="moviePicUrl" alt="card image">
+        <img 
+            [src]="moviePicUrl" 
+            alt="Image not found" 
+            onerror="this.error=null;this.style.height='220px';this.src='https://www.publicdomainpictures.net/pictures/280000/nahled/not-found-image-15383864787lu.jpg';"
+        >
         <div class="movie-rating-wrapper"><span class="movie-rating">{{ movieRating }}</span></div>
     </div>
     <div class="movie-desc">
