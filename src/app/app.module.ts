@@ -11,6 +11,7 @@ import { MoviesContentComponent } from './components/movies-content/movies-conte
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     MoviesTopBarComponent,
     MoviesSidebarComponent,
     MoviesContentComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,

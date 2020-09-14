@@ -1,0 +1,19 @@
+.search-wrap {
+    float: left;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .search-input {
+        height: 40px;
+        background-color: #ff424f;
+        border: none;
+    }
+    ::placeholder {
+        color: white;
+    }
+    .search-input:focus {
+        outline: none;
+    }
+}

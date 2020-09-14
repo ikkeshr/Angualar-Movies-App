@@ -6,15 +6,7 @@
             [movieTitle]="item.getTitle()" 
             [movieRating]="item.getRating()"
             [movieGenre]="item.getGenreStr()"
-            [moviePicUrl]="getRandPoster()"
+            [moviePicUrl]="item.getPosterUrl()"
             ></app-movie-card>
-
-            <!-- <app-movie-card 
-            *ngFor="let item of moviesFill" 
-            [movieTitle]="item.title" 
-            [movieRating]="item.rating"
-            [movieGenre]="item.genre"
-            [moviePicUrl]="item.picUrl"
-            ></app-movie-card> -->
     </div>
 </div>

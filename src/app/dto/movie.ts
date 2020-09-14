@@ -8,24 +8,24 @@ export class Movie {
         return this._title;
     }
 
-    public setTitle(_title: string): void {
-        this._title = _title;
+    public setTitle(title: string): void {
+        this._title = title;
     }
 
     public getRating(): number {
         return this._rating;
     }
 
-    public setRating(_rating: number): void {
-        this._rating = _rating;
+    public setRating(rating: number): void {
+        this._rating = rating;
     }
 
     public getGenre(): string[] {
         return this._genre;
     }
 
-    public setGenre(_genre: string[]): void {
-        this._genre = _genre;
+    public setGenre(genre: string[]): void {
+        this._genre = genre;
     }
 
     public getGenreStr(): string {
@@ -36,8 +36,8 @@ export class Movie {
         return this._posterUrl;
     }
 
-    public setPosterUrl(_posterUrl: string): void {
-        this._posterUrl = _posterUrl;
+    public setPosterUrl(posterUrl: string): void {
+        this._posterUrl = posterUrl;
     }
 
 
