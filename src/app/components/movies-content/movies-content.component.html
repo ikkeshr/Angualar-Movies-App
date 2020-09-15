@@ -1,5 +1,14 @@
 <div class="component-wrapper">
     <h3>{{ title }}</h3>
+
+    <h4>Sort by</h4>
+    <div class="sortby-chips">
+        <app-chip text="All" (click)="sortMovies('all')" [ifselected]="sortMoviesBy === 'all'"></app-chip>
+        <app-chip text="Positive" (click)="sortMovies('positive')" [ifselected]="sortMoviesBy === 'positive'"></app-chip>
+        <app-chip text="Neutral" (click)="sortMovies('neutral')" [ifselected]="sortMoviesBy === 'neutral'"></app-chip>
+        <app-chip text="Critical" (click)="sortMovies('critical')" [ifselected]="sortMoviesBy === 'critical'"></app-chip>
+    </div>
+
     <div class="movie-card-wrapper">
         <app-movie-card 
             *ngFor="let item of moviesToDisplay" 

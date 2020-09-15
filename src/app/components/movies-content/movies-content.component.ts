@@ -11,15 +11,32 @@ export class MoviesContentComponent implements OnInit {
 
   @Input() title: string;
   @Input('moviesToDisplay') moviesToDisplay: Movie[] = []; 
+  moviesToDisplayOriginal: Movie[] = []; 
 
-
+  sortMoviesBy: string = "all";
 
   constructor() {}
 
   ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    // console.log(this.moviesToDisplay);
+    // console.log(changes);
+    this.moviesToDisplayOriginal = changes.moviesToDisplay.currentValue;
+  }
+
+  sortMovies(sortOption: string): void {
+    this.sortMoviesBy = sortOption;
+
+    if (sortOption === "all") {
+      this.moviesToDisplay = this.moviesToDisplayOriginal;
+    } else if (sortOption === "positive") {
+      this.moviesToDisplay = this.moviesToDisplayOriginal.filter(m => m.getRating() > 5);
+    } else if (sortOption === "neutral") {
+      this.moviesToDisplay = this.moviesToDisplayOriginal.filter(m => m.getRating() === 5);
+    } else if (sortOption === "critical") {
+      this.moviesToDisplay = this.moviesToDisplayOriginal.filter(m => m.getRating() < 5);
+    }
+
   }
   
 

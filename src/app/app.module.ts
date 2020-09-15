@@ -12,6 +12,7 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
 
 import { HttpClientModule } from '@angular/common/http';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { ChipComponent } from './components/chip/chip.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     MoviesSidebarComponent,
     MoviesContentComponent,
     MovieCardComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    ChipComponent
   ],
   imports: [
     BrowserModule,

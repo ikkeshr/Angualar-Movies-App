@@ -3,6 +3,10 @@
     font-family: 'Open Sans', sans-serif; //Google Font
     font-size: 14px;
 
+    .sortby-chips {
+        display: flex;
+    }
+
     .movie-card-wrapper {
         display: flex;
         flex-wrap: wrap;
