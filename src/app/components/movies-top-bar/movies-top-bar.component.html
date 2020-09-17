@@ -6,6 +6,15 @@
 
     <app-searchbar (searchMovieTitle)="searchMovieByTitle($event)"></app-searchbar>
 
+    <div class="trending-wrap">
+        <div class="trending-item" (click)="showTrending('upcoming_movies')">
+            <span>Upcoming Movies</span>
+        </div>
+        <div class="trending-item" (click)="showTrending('popular_movies')">
+            <span>Popular Movies</span>
+        </div>
+    </div>
+
     <div class="topnav-right" (click)="showSettings()">
         <i class="material-icons settings-icon">settings</i>
         <div class="dropdown-content" [class.selected]="dropSettings">

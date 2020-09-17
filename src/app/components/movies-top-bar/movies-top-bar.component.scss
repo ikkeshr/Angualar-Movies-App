@@ -5,6 +5,7 @@
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     min-height: 40px;
+    display: flex;
 
     .logo-wrap {
         float: left;
@@ -15,11 +16,35 @@
         align-items: center;
     }
 
+    .trending-wrap {
+        display: flex;
+        width: fit-content;
+        justify-content: center;
+        align-items: center;
+
+        .trending-item{
+            width: fit-content;
+            padding: 8px;
+            font-size: 14px;
+        }
+        .trending-item:hover{
+            cursor: pointer;
+            opacity: 0.8;
+        }
+    }
+
     .topnav-right {
-        float: right;
+        
         padding:10px 20px 0px 0px;
-        position: relative;
-        display: inline-block;
+        // position: relative;
+        // display: inline-block;
+        // width: 100%;
+        margin-left: auto;
+        order: 2;
+
+        .settings-icon {
+            float: right;
+        }
 
         .settings-icon:hover {
             cursor: pointer;

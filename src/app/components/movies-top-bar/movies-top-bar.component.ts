@@ -8,7 +8,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class MoviesTopBarComponent implements OnInit {
 
   @Output() searchMovieTitle = new EventEmitter<string>();
+  @Output() selectedTrending = new EventEmitter<string>();
   dropSettings: boolean = false;
+  trendItemSelected: string;
 
   constructor() {}
 
@@ -20,8 +22,11 @@ export class MoviesTopBarComponent implements OnInit {
   }
 
   searchMovieByTitle(movieTitle: string): void {
-    // console.log("FROM TOPMENU search: " + movieTitle);
     this.searchMovieTitle.emit(movieTitle);
+  }
+
+  showTrending(value: string): void {
+    this.selectedTrending.emit(value);
   }
 
 }

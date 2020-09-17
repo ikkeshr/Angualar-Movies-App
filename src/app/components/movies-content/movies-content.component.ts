@@ -19,9 +19,14 @@ export class MoviesContentComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // runs when @inputs variables receives new values
   ngOnChanges(changes: SimpleChanges): void {
     // console.log(changes);
     this.moviesToDisplayOriginal = changes.moviesToDisplay.currentValue;
+
+    if (this.sortMoviesBy !== "all") {
+      this.sortMovies(this.sortMoviesBy);
+    }
   }
 
   sortMovies(sortOption: string): void {

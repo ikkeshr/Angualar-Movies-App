@@ -29,7 +29,11 @@ export class Movie {
     }
 
     public getGenreStr(): string {
-        return this._genre.join();
+        if (this._genre) {
+            return this._genre.join();
+        } else {
+            return null;
+        }
     }
 
     public getPosterUrl(): string {
