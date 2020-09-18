@@ -42,35 +42,17 @@ export class MoviesComponent implements OnInit {
   getTrendSelected(value: string): void {
     console.log("Movie component: " + value);
     if (value === "upcoming_movies") {
-      this.fetchJson.getUpcomingMovies().subscribe(response => {
-        if (response.results) {
-          this.textFromSideMenu = "Upcoming Movies";
-          this.apiResponseToMovieArr(response.results);
-        }
+      this.fetchJson.getUpcomingMovies().subscribe((movies: Movie[]) => {
+        this.textFromSideMenu = "Upcoming Movies";
+        this.moviesListToDisplay = movies;
       });
     } else if (value === "popular_movies") {
-      this.fetchJson.getPopularSeries().subscribe(response => {
-        if (response.results) {
-          this.textFromSideMenu = "Popular Movies";
-          this.apiResponseToMovieArr(response.results);
-        }
+      this.fetchJson.getPopularMovies().subscribe((movies: Movie[]) => {
+        this.textFromSideMenu = "Popular Movies";
+        this.moviesListToDisplay = movies;
       });
     }
   }
-
-  apiResponseToMovieArr(results: any[]): void {
-    this.moviesListToDisplay = [];
-    results.forEach(m => {
-      var movie = new Movie();
-      movie.setPosterUrl(`http://image.tmdb.org/t/p/w300${m.poster_path}?api_key=fed69657ba4cc6e1078d2a6a95f51c8c`);
-      movie.setRating(m.vote_average);
-      movie.setTitle(m.title);
-      
-      this.moviesListToDisplay.push(movie)
-    });
-  }
-
-
 
   getMoviesJson(): void {
     this.fetchJson.getMovies().subscribe((data: any[]) => {

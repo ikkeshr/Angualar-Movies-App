@@ -4,6 +4,18 @@ export class Movie {
     private _genre: string[];
     private _posterUrl: string;
 
+    // constructor(
+    //     title: string,
+    //     rating: number,
+    //     genre: string[],
+    //     posterUrl: string
+    // ) {
+    //     this._title = title;
+    //     this._rating = rating;
+    //     this._genre = genre;
+    //     this._posterUrl = posterUrl;
+    // }
+
     public getTitle(): string {
         return this._title;
     }
