@@ -13,6 +13,7 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
 import { HttpClientModule } from '@angular/common/http';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { ChipComponent } from './components/chip/chip.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ChipComponent } from './components/chip/chip.component';
     MoviesContentComponent,
     MovieCardComponent,
     SearchbarComponent,
-    ChipComponent
+    ChipComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,

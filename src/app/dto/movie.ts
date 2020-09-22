@@ -1,4 +1,6 @@
 export class Movie {
+
+    private _id: number;
     private _title: string;
     private _rating: number;
     private _genre: string[];
@@ -15,6 +17,14 @@ export class Movie {
     //     this._genre = genre;
     //     this._posterUrl = posterUrl;
     // }
+
+    public getId(): number {
+        return this._id;
+    }
+    
+    public setId(value: number) {
+        this._id = value;
+    }
 
     public getTitle(): string {
         return this._title;

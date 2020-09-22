@@ -3,12 +3,13 @@
         <img 
             [src]="moviePicUrl" 
             alt="Image not found" 
-            onerror="this.error=null;this.style.height='220px';this.src='https://www.publicdomainpictures.net/pictures/280000/nahled/not-found-image-15383864787lu.jpg';"
+            onerror="this.error=null;this.src='https://www.publicdomainpictures.net/pictures/280000/nahled/not-found-image-15383864787lu.jpg';"
         >
         <div class="movie-rating-wrapper"><span class="movie-rating">{{ movieRating }}</span></div>
     </div>
     <div class="movie-desc">
         <span class="movie-title">{{ movieTitle }}</span>
         <span class="movie-genre">{{ movieGenre }}</span>
+        <span *ngIf="movieId" class="view-movie-details" routerLink="/movie/{{movieId}}">View Details</span>
     </div>
 </div>

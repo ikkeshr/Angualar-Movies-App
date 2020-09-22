@@ -1,0 +1,30 @@
+<div class="movie-details-page">
+    <app-movies-top-bar [showSearch]="false" (selectedTrending)="selectedTrendFromTopBar($event)"></app-movies-top-bar>
+    
+    <div class="movie-details-page-body">
+        <app-movies-sidebar (newItemEvent)="selectedGenreFromSideMenu($event)" [movieGenres]="genreList"></app-movies-sidebar>
+        <div class="movie-details-page-content">
+            
+            <div class="movie-poster-wrap">
+                <img [src]="movieDetails?.get_posterUrl()"/>
+                <div class="movie-homepage" (click)="openLink(movieDetails?.get_homepage())">Visit Movies website</div>
+            </div>
+
+            <div class="movie-details-wrap">
+                <h2 class="movie-title">{{ movieDetails?.get_title() }}</h2>
+                <p class="movie-overview">{{ movieDetails?.get_overview() }}</p>
+                <div class="movie-details">
+                    <div class="details-wrap"><span class="details-header">Original Title:</span><span class="details-content">{{ movieDetails?.get_originalTitle() }}</span></div>
+                    <div class="details-wrap"><span class="details-header">Genre:</span><span class="details-content">{{ movieDetails?.get_genreStr() }}</span></div>
+                    <div class="details-wrap"><span class="details-header">Rating:</span><span class="details-content">{{ movieDetails?.get_rating() }}</span></div>
+                    <div class="details-wrap"><span class="details-header">Production Countries:</span><span class="details-content">{{ movieDetails?.get_productionCountriesStr() }}</span></div>
+                    <div class="details-wrap"><span class="details-header">Production Companies:</span><span class="details-content">{{ movieDetails?.get_productionCompaniesStr() }}</span></div>
+                    <div class="details-wrap"><span class="details-header">Release Date:</span><span class="details-content">{{ movieDetails?.get_releaseDate() }}</span></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

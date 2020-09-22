@@ -10,14 +10,14 @@ export class MoviesSidebarComponent implements OnInit {
 
   @Output() newItemEvent = new EventEmitter<string>();
   @Input('movieGenres') movieGenres: string[] = ["Loading genres.."];
-  nameSelected: string;
+  @Input('itemSelected') nameSelected: string;
 
   constructor() {
     this.nameSelected = "Movies";
   }
 
   ngOnInit(): void {
-    this.sendToParent(this.nameSelected);
+    // this.sendToParent(this.nameSelected);
   }
 
   changeColor(name: string) {

@@ -1,0 +1,52 @@
+.movie-details-page {
+    background-color: #414141;
+    min-height: 100%;
+    
+    .movie-details-page-body {
+        display: flex;
+        min-height: 96.5vh;
+
+        .movie-details-page-content {
+            padding: 16px;
+            display: flex;
+
+            .movie-poster-wrap {
+                min-width: 300px;
+                overflow: hidden;
+                .movie-homepage {
+                    cursor: pointer;
+                    color: white;
+                    text-align: center;
+                    width: 100%;
+                    background-color: darkturquoise;
+                    padding: 8px 4px 8px 4px;
+                }
+            }
+
+            .movie-details-wrap {
+                padding: 0px 8px 0px 12px;
+                min-width: 400px;
+
+                .movie-title {
+                    color: darkturquoise;
+                }
+                .movie-overview {
+                    color: white;
+                }
+                .movie-details {
+                    padding-top: 18px;
+                    .details-wrap {
+                        margin-top: 6px;
+                        .details-header {
+                            color: darkturquoise;
+                            margin-right: 6px;
+                        }
+                        .details-content {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-movies-top-bar',
@@ -10,7 +10,9 @@ export class MoviesTopBarComponent implements OnInit {
   @Output() searchMovieTitle = new EventEmitter<string>();
   @Output() selectedTrending = new EventEmitter<string>();
   dropSettings: boolean = false;
-  trendItemSelected: string;
+  @Input('trendItemSelected') trendItemSelected: string;
+
+  @Input('showSearch') showSearch: boolean = true;
 
   constructor() {}
 
@@ -26,6 +28,7 @@ export class MoviesTopBarComponent implements OnInit {
   }
 
   showTrending(value: string): void {
+    this.trendItemSelected = value;
     this.selectedTrending.emit(value);
   }
 

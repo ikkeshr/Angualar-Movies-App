@@ -11,7 +11,8 @@
 
     <div class="movie-card-wrapper">
         <app-movie-card 
-            *ngFor="let item of moviesToDisplay" 
+            *ngFor="let item of moviesToDisplay"
+            [movieId]="item.getId()"
             [movieTitle]="item.getTitle()" 
             [movieRating]="item.getRating()"
             [movieGenre]="item.getGenreStr()"

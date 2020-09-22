@@ -4,23 +4,28 @@
         <span>MEDIAPP</span>
     </div>
 
-    <app-searchbar (searchMovieTitle)="searchMovieByTitle($event)"></app-searchbar>
+    <app-searchbar *ngIf="showSearch" (searchMovieTitle)="searchMovieByTitle($event)"></app-searchbar>
 
-    <div class="trending-wrap">
-        <div class="trending-item" (click)="showTrending('upcoming_movies')">
-            <span>Upcoming Movies</span>
-        </div>
-        <div class="trending-item" (click)="showTrending('popular_movies')">
-            <span>Popular Movies</span>
-        </div>
-    </div>
+    <div class="top-nav-right">
 
-    <div class="topnav-right" (click)="showSettings()">
-        <i class="material-icons settings-icon">settings</i>
-        <div class="dropdown-content" [class.selected]="dropSettings">
-            <p>Ikkesh Ramanna</p>
-            <p>Languages</p>
-            <p>Log out</p>
+        <div class="trending-wrap">
+            <div class="trending-item" (click)="showTrending('upcoming_movies')" [class.selected]="trendItemSelected==='upcoming_movies'">
+                <span>Upcoming Movies</span>
+            </div>
+            <div class="trending-item" (click)="showTrending('popular_movies')" [class.selected]="trendItemSelected==='popular_movies'">
+                <span>Popular Movies</span>
+            </div>
         </div>
+    
+        <div class="topnav-settings-wrap" (click)="showSettings()">
+            <i class="material-icons settings-icon">settings</i>
+            <div class="dropdown-content" [class.selected]="dropSettings">
+                <p>Ikkesh Ramanna</p>
+                <p>Languages</p>
+                <p>Log out</p>
+            </div>
+        </div>
+
+
     </div>
 </div>

@@ -35,6 +35,13 @@
             font-size: 12px;
             color: gray;
         }
+        .view-movie-details {
+            font-size: 12px;
+            color: bisque;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
     }
 }
 .outer-most:hover {

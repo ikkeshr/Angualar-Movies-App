@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchJsonService } from '../../services/fetch-json.service';
 import { Movie } from '../../dto/movie';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
@@ -10,37 +11,49 @@ import { Movie } from '../../dto/movie';
 export class MoviesComponent implements OnInit {
 
   textFromSideMenu: string;
-  movieList: Movie[] = [];
+  movieList: Movie[] = []; // Holds all the movies from the JSON file in assets directory
   movieGenres: string[] = [];
   moviesListToDisplay: Movie[] = [];
 
-  constructor(private fetchJson: FetchJsonService) {
-  }
+  sideMenuSelectedGenre: string;
+  topMenuSelectedTread: string;
+
+  constructor(
+    private fetchJson: FetchJsonService,
+    private route: ActivatedRoute,
+    ) {}
 
   ngOnInit(): void {
-    this.textFromSideMenu="New Releases";
     this.getMoviesJson();
   }
 
   //on side menu item seleted
   setTextFromSideMenu(text: string): void {
     this.textFromSideMenu = text;
+    this.sideMenuSelectedGenre = text;
+    this.topMenuSelectedTread = "";
     this.moviesListToDisplay = this.getMoviesByGenre(text);
   }
 
   getSearchValue(value: string): void {
     // console.log("FROM MOVIES search: " + value);
     // console.log(this.getMoviesByTitle(value));
-    this.setTextFromSideMenu("Search '" + value + "'");
+    this.textFromSideMenu = "Search '" + value + "'";
+    this.sideMenuSelectedGenre = "";
+    this.topMenuSelectedTread = "";
+
     this.moviesListToDisplay = this.getMoviesByTitle(value);
 
     if (this.moviesListToDisplay.length < 1) {
-      this.setTextFromSideMenu("Search '" + value + "' - No Results");
+      this.textFromSideMenu = "Search '" + value + "' - No Results";
     }
   }
 
   getTrendSelected(value: string): void {
-    console.log("Movie component: " + value);
+    // console.log("Movie component: " + value);
+    this.sideMenuSelectedGenre = "";
+    this.topMenuSelectedTread = value;
+
     if (value === "upcoming_movies") {
       this.fetchJson.getUpcomingMovies().subscribe((movies: Movie[]) => {
         this.textFromSideMenu = "Upcoming Movies";
@@ -77,6 +90,21 @@ export class MoviesComponent implements OnInit {
 
       // Set default seleted
       this.setTextFromSideMenu(this.movieGenres[0]);
+
+      this.retrieveQueryParams();
+    });
+  }
+
+  retrieveQueryParams(): void {
+    this.route.queryParamMap.subscribe(params => {
+      if (params.has("action")) {
+        if (params.get("action") === "side" && params.has("genre")) {
+          this.setTextFromSideMenu(params.get("genre"));
+        }
+        else if (params.get("action") === "top" && params.has("trend")) {
+          this.getTrendSelected(params.get("trend"));
+        }
+      }
     });
   }
 

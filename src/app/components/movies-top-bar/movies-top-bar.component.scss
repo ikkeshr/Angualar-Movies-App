@@ -16,55 +16,68 @@
         align-items: center;
     }
 
-    .trending-wrap {
+    .top-nav-right {
         display: flex;
-        width: fit-content;
-        justify-content: center;
-        align-items: center;
 
-        .trending-item{
-            width: fit-content;
-            padding: 8px;
-            font-size: 14px;
-        }
-        .trending-item:hover{
-            cursor: pointer;
-            opacity: 0.8;
-        }
-    }
-
-    .topnav-right {
-        
-        padding:10px 20px 0px 0px;
-        // position: relative;
-        // display: inline-block;
-        // width: 100%;
+        // Makes div float right in the flexbox
         margin-left: auto;
         order: 2;
 
-        .settings-icon {
-            float: right;
-        }
-
-        .settings-icon:hover {
-            cursor: pointer;
-        }
-
-        .dropdown-content {
-            display: none;
-            margin-top: 25px;
-            right: 0;
-            color: black;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            padding: 12px 16px;
-            z-index: 1;
-
-            &.selected {
-                display:block;
+        .trending-wrap {
+            display: flex;
+            width: fit-content;
+            padding-right: 30px;
+    
+            .trending-item{
+                width: fit-content;
+                font-size: 14px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0px 6px 0px 6px;
+    
+                &:hover {
+                    cursor: pointer;
+                    opacity: 0.7;
+                }
+                &.selected {
+                    background-color: darkgrey;
+                }
             }
         }
-  }
+    
+        .topnav-settings-wrap {
+            
+            padding:10px 20px 0px 0px;
+            // position: relative;
+            // display: inline-block;
+            // width: 100%;
+            
+    
+            // .settings-icon {
+            //     float: right;
+            // }
+    
+            .settings-icon:hover {
+                cursor: pointer;
+            }
+    
+            .dropdown-content {
+                display: none;
+                margin-top: 25px;
+                right: 0;
+                color: black;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                padding: 12px 16px;
+                z-index: 1;
+    
+                &.selected {
+                    display:block;
+                }
+            }
+      }
+    }
 }
