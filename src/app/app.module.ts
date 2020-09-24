@@ -14,6 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { ChipComponent } from './components/chip/chip.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { LoginComponent } from './components/login/login.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,12 +30,15 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     MovieCardComponent,
     SearchbarComponent,
     ChipComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    LoginComponent,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

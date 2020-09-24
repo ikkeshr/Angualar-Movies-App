@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movies-top-bar',
@@ -14,7 +15,9 @@ export class MoviesTopBarComponent implements OnInit {
 
   @Input('showSearch') showSearch: boolean = true;
 
-  constructor() {}
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
   }
@@ -30,6 +33,10 @@ export class MoviesTopBarComponent implements OnInit {
   showTrending(value: string): void {
     this.trendItemSelected = value;
     this.selectedTrending.emit(value);
+  }
+
+  logout(): void {
+    this.router.navigate(['/login']);
   }
 
 }

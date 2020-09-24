@@ -1,0 +1,36 @@
+<div class="root">
+    <div class="auth-wrap">
+        <div class="signup-wrap">
+            <div class="signup">
+                <h3>Don't have an Account?</h3>
+                <button>CREATE ACCOUNT</button>
+            </div>
+        </div>
+        
+        <div class="login-wrap">
+            <h2 class="welcome">Welcome Back!</h2>
+            <form class="login-form" [formGroup]="loginForm" (ngSubmit)="submitLoginForm()">
+                <div class="form-input">
+                    <div class="label"><span>Email Address</span><div class="input-error" *ngIf="invalidEmail"><span>Invalid</span></div></div>
+                    <input type="text" formControlName="email">
+                </div>
+                <div class="form-input">
+                    <div class="label"><span>Password</span><div class="input-error" *ngIf="invalidPassword"><span>Invalid</span></div></div>
+                    <input [type]="(showPassword) ? 'text' : 'password'" formControlName="password">
+                    <i [ngClass]="(showPassword) ? 'far fa-eye-slash eye-icon' : 'far fa-eye eye-icon'" (click)="togglePassword()"></i>
+                </div>
+                <div class="form-actions">
+                    <app-checkbox label="Stay Signed In" (checkChanged)="staySignedInCheckBox($event)"></app-checkbox>
+                    <div class="forgot-pwd">
+                        <i class="fas fa-lock lock-icon"></i>
+                        <span >Forgot Password?</span>
+                    </div>
+                    
+                </div>
+                <div class="submit-btn-wrap">
+                    <button type="submit">SIGN IN</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
