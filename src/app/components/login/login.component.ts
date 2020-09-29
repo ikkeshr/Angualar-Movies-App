@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FetchJsonService } from '../../services/fetch-json.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private fetchJson: FetchJsonService
   ) {}
 
   ngOnInit(): void {
@@ -47,7 +49,15 @@ export class LoginComponent implements OnInit {
 
     if (this.invalidEmail || this.invalidPassword) return;
 
-    this.router.navigate(["/"]);
+    this.fetchJson.getToken().subscribe(token => {
+      if (token) {
+        localStorage.setItem("token", token);
+        this.router.navigate(["/"]);
+      } else {
+        this.invalidEmail = true;
+        this.invalidPassword = true;
+      }
+    });
   }
 
 }

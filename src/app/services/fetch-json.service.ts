@@ -86,5 +86,15 @@ export class FetchJsonService {
       })
     );
   }
+
+  public getToken(): Observable<string> {
+    return this.http.get(`https://api.themoviedb.org/3/authentication/token/new?api_key=${this.apiKey}`).pipe(
+      map ((response: any) => {
+        if (response.request_token) {
+          return response.request_token;
+        }
+      })
+    );
+  }
    
 }

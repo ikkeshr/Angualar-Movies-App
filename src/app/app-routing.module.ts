@@ -5,9 +5,11 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { AuthGuard } from './guards/auth.guard';
+
 const routes: Routes = [
-  {path: '', component: MoviesComponent},
-  { path: 'movie/:id', component: MovieDetailsComponent },
+  { path: '', component: MoviesComponent, canActivate: [AuthGuard] },
+  { path: 'movie/:id', component: MovieDetailsComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent }
 ];
 
