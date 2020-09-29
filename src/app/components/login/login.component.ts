@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FetchJsonService } from '../../services/fetch-json.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private fetchJson: FetchJsonService
+    private fetchJson: FetchJsonService,
+    private translate: TranslateService
   ) {}
 
   ngOnInit(): void {
@@ -41,6 +43,11 @@ export class LoginComponent implements OnInit {
 
   public staySignedInCheckBox(value): void {
     this.staySignedIn = value;
+  }
+
+  public changeLanguage(langCode: string): void {
+    this.translate.setDefaultLang(langCode);
+    localStorage.setItem("language", langCode);
   }
 
   submitLoginForm(): void {

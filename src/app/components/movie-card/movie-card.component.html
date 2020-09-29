@@ -10,6 +10,6 @@
     <div class="movie-desc">
         <span class="movie-title">{{ movieTitle }}</span>
         <span class="movie-genre">{{ movieGenre }}</span>
-        <span *ngIf="movieId" class="view-movie-details" routerLink="/movie/{{movieId}}">View Details</span>
+        <span *ngIf="movieId" class="view-movie-details" routerLink="/movie/{{movieId}}">{{ 'MOVIE_CARD.DETAILS_LINK' | translate }}</span>
     </div>
 </div>

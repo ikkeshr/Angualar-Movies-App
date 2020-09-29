@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { FetchJsonService } from '../../services/fetch-json.service';
 import { MovieDetails } from  '../../dto/movie-details';
 import { Router } from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-movie-details',
@@ -19,7 +21,8 @@ export class MovieDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private fetchJson: FetchJsonService,
-    private router: Router
+    private router: Router,
+    public translate: TranslateService
   ) {
     // this.movieDetails = new MovieDetails();
   }

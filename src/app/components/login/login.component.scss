@@ -129,6 +129,22 @@
                     }
                 }
             }
+
+            .footer {
+                position: absolute;
+                bottom: 5px;
+                left: 0px;
+                margin-left: 40%;
+                // background-color: aqua;
+
+                .footer-item {
+                    padding: 0px 12px 0px 12px;
+                    font-size: 12px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
         }
 
     }

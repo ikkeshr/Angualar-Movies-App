@@ -1,5 +1,5 @@
 <div class="topnav">
-    <div class="logo-wrap">
+    <div class="logo-wrap" routerLink="/">
         <i class="large material-icons">insert_chart</i>
         <span>MEDIAPP</span>
     </div>
@@ -10,19 +10,27 @@
 
         <div class="trending-wrap">
             <div class="trending-item" (click)="showTrending('upcoming_movies')" [class.selected]="trendItemSelected==='upcoming_movies'">
-                <span>Upcoming Movies</span>
+                <span>{{ 'TOP_BAR.TRENDS.ITEM_1' | translate }}</span>
             </div>
             <div class="trending-item" (click)="showTrending('popular_movies')" [class.selected]="trendItemSelected==='popular_movies'">
-                <span>Popular Movies</span>
+                <span>{{ 'TOP_BAR.TRENDS.ITEM_2' | translate }}</span>
             </div>
         </div>
     
-        <div class="topnav-settings-wrap" (click)="showSettings()">
-            <i class="material-icons settings-icon">settings</i>
+        <div class="topnav-settings-wrap">
+            <i class="material-icons settings-icon" (click)="toggleSettings()">settings</i>
             <div class="dropdown-content" [class.selected]="dropSettings">
-                <div class="dropdown-item">Ikkesh Ramanna</div>
-                <div class="dropdown-item">Languages</div>
-                <div class="dropdown-item" (click)="logout()">Log out</div>
+                <div class="settings-wrap" *ngIf="!showLanguages">
+                    <div class="dropdown-item"><b>Ikkesh Ramanna</b></div>
+                    <div class="dropdown-item" (click)="toggleLanguages()">{{ 'TOP_BAR.SETTINGS.LANGUAGES_ITEM' | translate }} <i class="fas fa-arrow-right" style="float: right;"></i></div>
+                    <div class="dropdown-item" (click)="logout()">{{ 'TOP_BAR.SETTINGS.LOGOUT_ITEM' | translate }} </div>
+                </div>
+
+                <div class="languages-wrap" *ngIf="showLanguages">
+                    <div class="dropdown-item" (click)="changeLanguage('en')">{{ 'TOP_BAR.SETTINGS.LANGUAGES.LANGUAGE_1' | translate }}</div>
+                    <div class="dropdown-item" (click)="changeLanguage('fr')">{{ 'TOP_BAR.SETTINGS.LANGUAGES.LANGUAGE_2' | translate }}</div>
+                    <div class="dropdown-item" (click)="toggleLanguages()"><i class="fas fa-arrow-left"></i><b style="float: right">{{ 'TOP_BAR.SETTINGS.BACK_ITEM' | translate }}</b></div>
+                </div>
             </div>
         </div>
 

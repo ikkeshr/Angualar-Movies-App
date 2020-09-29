@@ -2,35 +2,39 @@
     <div class="auth-wrap">
         <div class="signup-wrap">
             <div class="signup">
-                <h3>Don't have an Account?</h3>
-                <button>CREATE ACCOUNT</button>
+                <h3>{{ 'LOGIN.SIGNUP_DETAILS.TITLE' | translate }}</h3>
+                <button>{{ 'LOGIN.SIGNUP_DETAILS.BUTTON' | translate }}</button>
             </div>
         </div>
         
         <div class="login-wrap">
-            <h2 class="welcome">Welcome Back!</h2>
+            <h2 class="welcome">{{ 'LOGIN.FORM.TITLE' | translate }}</h2>
             <form class="login-form" [formGroup]="loginForm" (ngSubmit)="submitLoginForm()">
                 <div class="form-input">
-                    <div class="label"><span>Email Address</span><div class="input-error" *ngIf="invalidEmail"><span>Invalid</span></div></div>
+                    <div class="label"><span>{{ 'LOGIN.FORM.EMAIL_LABEL' | translate }}</span><div class="input-error" *ngIf="invalidEmail"><span>{{ 'LOGIN.FORM.ERROR' | translate }}</span></div></div>
                     <input type="text" formControlName="email">
                 </div>
                 <div class="form-input">
-                    <div class="label"><span>Password</span><div class="input-error" *ngIf="invalidPassword"><span>Invalid</span></div></div>
+                    <div class="label"><span>{{ 'LOGIN.FORM.PASSWORD_LABEL' | translate }}</span><div class="input-error" *ngIf="invalidPassword"><span>{{ 'LOGIN.FORM.ERROR' | translate }}</span></div></div>
                     <input [type]="(showPassword) ? 'text' : 'password'" formControlName="password">
                     <i [ngClass]="(showPassword) ? 'far fa-eye-slash eye-icon' : 'far fa-eye eye-icon'" (click)="togglePassword()"></i>
                 </div>
                 <div class="form-actions">
-                    <app-checkbox label="Stay Signed In" (checkChanged)="staySignedInCheckBox($event)"></app-checkbox>
+                    <app-checkbox label="{{ 'LOGIN.FORM.REMEMBER_ME_CHECKBOX_LABEL' | translate }}" (checkChanged)="staySignedInCheckBox($event)"></app-checkbox>
                     <div class="forgot-pwd">
                         <i class="fas fa-lock lock-icon"></i>
-                        <span >Forgot Password?</span>
+                        <span>{{ 'LOGIN.FORM.RESET_PASSWORD_LABEL' | translate }}</span>
                     </div>
                     
                 </div>
                 <div class="submit-btn-wrap">
-                    <button type="submit">SIGN IN</button>
+                    <button type="submit">{{ 'LOGIN.FORM.SUBMIT_BUTTON' | translate }}</button>
                 </div>
             </form>
+            <div class="footer">
+                <span class="footer-item" (click)="changeLanguage('en')">{{ 'LOGIN.FOOTER.ITEM_1' | translate }}</span>
+                <span class="footer-item" (click)="changeLanguage('fr')">{{ 'LOGIN.FOOTER.ITEM_2' | translate }}</span>
+            </div>
         </div>
     </div>
 </div>

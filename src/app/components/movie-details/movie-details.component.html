@@ -7,19 +7,19 @@
             
             <div class="movie-poster-wrap">
                 <img [src]="movieDetails?.get_posterUrl()"/>
-                <div class="movie-homepage" (click)="openLink(movieDetails?.get_homepage())">Visit Movies website</div>
+                <div class="movie-homepage" (click)="openLink(movieDetails?.get_homepage())">{{ 'MOVIE_DETAILS.WEBSITE_LINK' | translate }}</div>
             </div>
 
             <div class="movie-details-wrap">
                 <h2 class="movie-title">{{ movieDetails?.get_title() }}</h2>
                 <p class="movie-overview">{{ movieDetails?.get_overview() }}</p>
                 <div class="movie-details">
-                    <div class="details-wrap"><span class="details-header">Original Title:</span><span class="details-content">{{ movieDetails?.get_originalTitle() }}</span></div>
-                    <div class="details-wrap"><span class="details-header">Genre:</span><span class="details-content">{{ movieDetails?.get_genreStr() }}</span></div>
-                    <div class="details-wrap"><span class="details-header">Rating:</span><span class="details-content">{{ movieDetails?.get_rating() }}</span></div>
-                    <div class="details-wrap"><span class="details-header">Production Countries:</span><span class="details-content">{{ movieDetails?.get_productionCountriesStr() }}</span></div>
-                    <div class="details-wrap"><span class="details-header">Production Companies:</span><span class="details-content">{{ movieDetails?.get_productionCompaniesStr() }}</span></div>
-                    <div class="details-wrap"><span class="details-header">Release Date:</span><span class="details-content">{{ movieDetails?.get_releaseDate() }}</span></div>
+                    <div class="details-wrap"><span class="details-header">{{ 'MOVIE_DETAILS.ORIGINAL_TITLE' | translate }}:</span><span class="details-content">{{ movieDetails?.get_originalTitle() }}</span></div>
+                    <div class="details-wrap"><span class="details-header">{{ 'MOVIE_DETAILS.GENRE' | translate }}:</span><span class="details-content">{{ movieDetails?.get_genreStr() }}</span></div>
+                    <div class="details-wrap"><span class="details-header">{{ 'MOVIE_DETAILS.RATING' | translate }}:</span><span class="details-content">{{ movieDetails?.get_rating() }}</span></div>
+                    <div class="details-wrap"><span class="details-header">{{ 'MOVIE_DETAILS.PRODUCTION_COMPANIES' | translate }}:</span><span class="details-content">{{ movieDetails?.get_productionCountriesStr() }}</span></div>
+                    <div class="details-wrap"><span class="details-header">{{ 'MOVIE_DETAILS.PRODUCTION_COUNTRIES' | translate }}:</span><span class="details-content">{{ movieDetails?.get_productionCompaniesStr() }}</span></div>
+                    <div class="details-wrap"><span class="details-header">{{ 'MOVIE_DETAILS.RELEASE_DATE' | translate }}:</span><span class="details-content">{{ movieDetails?.get_releaseDate() | date: 'd MMMM y' : '+0200': translate.getDefaultLang() }}</span></div>
                 </div>
             </div>
 

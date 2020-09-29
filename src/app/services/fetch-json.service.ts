@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { Movie } from '../dto/movie';
 import { MovieDetails } from '../dto/movie-details';
+import {TranslateService} from '@ngx-translate/core';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,19 +14,33 @@ export class FetchJsonService {
 
   private readonly apiKey: string = "fed69657ba4cc6e1078d2a6a95f51c8c";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private translate: TranslateService) {}
 
   public getMovies(): Observable<any> {
     return this.http.get("../assets/movies.json");
   }
 
   public getUpcomingMovies(): Observable<Movie[]> {
-    const apiResponse = this.http.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=${this.apiKey}`);
+    const httpOptions = {
+      params: {
+        api_key: this.apiKey,
+        language: this.translate.getDefaultLang()
+      }
+    };
+
+    const apiResponse = this.http.get("https://api.themoviedb.org/3/movie/upcoming", httpOptions);
     return this.responseToMovieArrTransform(apiResponse);
   }
 
   public getPopularMovies(): Observable<Movie[]> {
-    const apiResponse = this.http.get(`https://api.themoviedb.org/3/movie/popular?api_key=${this.apiKey}`);
+    const httpOptions = {
+      params: {
+        api_key: this.apiKey,
+        language: this.translate.getDefaultLang()
+      }
+    };
+
+    const apiResponse = this.http.get("https://api.themoviedb.org/3/movie/popular", httpOptions);
     return this.responseToMovieArrTransform(apiResponse);
   }
 
@@ -48,8 +64,15 @@ export class FetchJsonService {
   });
 
   public getMovieDetails(movieId: number): Observable<MovieDetails> {
-    const apiUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${this.apiKey}`;
-    return this.http.get(apiUrl).pipe(
+    const httpOptions = {
+      params: {
+        api_key: this.apiKey,
+        language: this.translate.getDefaultLang()
+      }
+    };
+
+    const apiUrl = `https://api.themoviedb.org/3/movie/${movieId}`;
+    return this.http.get(apiUrl, httpOptions).pipe(
       map ((response: any) => {
         if (response) {
           let movieDetails: MovieDetails = new MovieDetails();

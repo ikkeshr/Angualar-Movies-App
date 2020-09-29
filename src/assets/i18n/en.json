@@ -1,0 +1,64 @@
+{
+    "APP_TITLE": "Movies App",
+    "TOP_BAR": {
+        "SEARCH": {
+            "PLACEHOLDER": "Search Movies"
+        },
+        "TRENDS": {
+            "ITEM_1": "Upcoming Movies",
+            "ITEM_2": "Popular Movies"
+        },
+        "SETTINGS": {
+            "TITLE": "Settings",
+            "LANGUAGES_ITEM": "Languages",
+            "LOGOUT_ITEM": "Log out",
+            "LANGUAGES": {
+                "LANGUAGE_1": "English",
+                "LANGUAGE_2": "French"
+            },
+            "BACK_ITEM": "Back"
+        }
+    },
+    "MOVIES_CONTENT": {
+        "SORTING": {
+            "TITLE": "Sort by",
+            "OPTIONS": {
+                "OPTION_1": "All",
+                "OPTION_2": "Positive",
+                "OPTION_3": "Neutral",
+                "OPTION_4": "Critical"
+            }
+        }
+    },
+    "MOVIE_CARD": {
+        "DETAILS_LINK": "View Details"
+    },
+    "MOVIE_DETAILS": {
+        "WEBSITE_LINK": "Visit Movie Website",
+        "ORIGINAL_TITLE": "Original title",
+        "GENRE": "Genre",
+        "RATING": "Rating",
+        "PRODUCTION_COMPANIES": "Production Companies",
+        "PRODUCTION_COUNTRIES": "Production Countries",
+        "RELEASE_DATE": "Release Date" 
+    },
+    "LOGIN": {
+        "SIGNUP_DETAILS": {
+            "TITLE": "Don't have an Account?",
+            "BUTTON": "CREATE ACCOUNT"
+        },
+        "FORM": {
+            "TITLE": "Welcome Back!",
+            "EMAIL_LABEL": "Email Address",
+            "PASSWORD_LABEL": "Password",
+            "REMEMBER_ME_CHECKBOX_LABEL": "Stay Signed In",
+            "RESET_PASSWORD_LABEL": "Forgot Password?",
+            "SUBMIT_BUTTON": "SIGN IN",
+            "ERROR": "Invalid"
+        },
+        "FOOTER": {
+            "ITEM_1": "English",
+            "ITEM_2": "French"
+        }
+    }
+}

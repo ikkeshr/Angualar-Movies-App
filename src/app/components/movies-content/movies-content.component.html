@@ -1,12 +1,12 @@
 <div class="component-wrapper">
     <h3 style="color:aliceblue">{{ title }}</h3>
 
-    <h4 style="color:bisque">Sort by</h4>
+    <h4 style="color:bisque">{{ 'MOVIES_CONTENT.SORTING.TITLE' | translate }}</h4>
     <div class="sortby-chips">
-        <app-chip text="All" (click)="sortMovies('all')" [ifselected]="sortMoviesBy === 'all'"></app-chip>
-        <app-chip text="Positive" (click)="sortMovies('positive')" [ifselected]="sortMoviesBy === 'positive'"></app-chip>
-        <app-chip text="Neutral" (click)="sortMovies('neutral')" [ifselected]="sortMoviesBy === 'neutral'"></app-chip>
-        <app-chip text="Critical" (click)="sortMovies('critical')" [ifselected]="sortMoviesBy === 'critical'"></app-chip>
+        <app-chip text="{{ 'MOVIES_CONTENT.SORTING.OPTIONS.OPTION_1' | translate }}" (click)="sortMovies('all')" [ifselected]="sortMoviesBy === 'all'"></app-chip>
+        <app-chip text="{{ 'MOVIES_CONTENT.SORTING.OPTIONS.OPTION_2' | translate }}" (click)="sortMovies('positive')" [ifselected]="sortMoviesBy === 'positive'"></app-chip>
+        <app-chip text="{{ 'MOVIES_CONTENT.SORTING.OPTIONS.OPTION_3' | translate }}" (click)="sortMovies('neutral')" [ifselected]="sortMoviesBy === 'neutral'"></app-chip>
+        <app-chip text="{{ 'MOVIES_CONTENT.SORTING.OPTIONS.OPTION_4' | translate }}" (click)="sortMovies('critical')" [ifselected]="sortMoviesBy === 'critical'"></app-chip>
     </div>
 
     <div class="movie-card-wrapper">

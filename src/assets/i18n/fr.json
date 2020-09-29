@@ -1,0 +1,64 @@
+{
+    "APP_TITLE": "Application de Films",
+    "TOP_BAR": {
+        "SEARCH": {
+            "PLACEHOLDER": "Rechercher des films"
+        },
+        "TRENDS": {
+            "ITEM_1": "Films à venir",
+            "ITEM_2": "Films Populaires"
+        },
+        "SETTINGS": {
+            "TITLE": "Réglages",
+            "LANGUAGES_ITEM": "Langues",
+            "LOGOUT_ITEM": "Déconnecter",
+            "LANGUAGES": {
+                "LANGUAGE_1": "Anglais",
+                "LANGUAGE_2": "Français"
+            },
+            "BACK_ITEM": "Rétour"
+        }
+    },
+    "MOVIES_CONTENT": {
+        "SORTING": {
+            "TITLE": "Trier par",
+            "OPTIONS": {
+                "OPTION_1": "Tous",
+                "OPTION_2": "Positive",
+                "OPTION_3": "Neutre",
+                "OPTION_4": "Critique"
+            }
+        }
+    },
+    "MOVIE_CARD": {
+        "DETAILS_LINK": "Voir les Détails"
+    },
+    "MOVIE_DETAILS": {
+        "WEBSITE_LINK": "Visitez le site web du film",
+        "ORIGINAL_TITLE": "Titre Original",
+        "GENRE": "Genre",
+        "RATING": "Note",
+        "PRODUCTION_COMPANIES": "Sociétés de Production",
+        "PRODUCTION_COUNTRIES": "Pays de Production",
+        "RELEASE_DATE": "Date de Sortie" 
+    },
+    "LOGIN": {
+        "SIGNUP_DETAILS": {
+            "TITLE": "Vous n'avez pas de compte?",
+            "BUTTON": "INSCRIVEZ-VOUS"
+        },
+        "FORM": {
+            "TITLE": "Bienvenue!",
+            "EMAIL_LABEL": "Email",
+            "PASSWORD_LABEL": "Mot de passe",
+            "REMEMBER_ME_CHECKBOX_LABEL": "Rester connecté",
+            "RESET_PASSWORD_LABEL": "Mot de passe oublié?",
+            "SUBMIT_BUTTON": "Connexion",
+            "ERROR": "Invalide"
+        },
+        "FOOTER": {
+            "ITEM_1": "Anglais",
+            "ITEM_2": "Français"
+        }
+    }
+}
