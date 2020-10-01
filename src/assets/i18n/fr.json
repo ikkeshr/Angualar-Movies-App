@@ -14,7 +14,8 @@
             "LOGOUT_ITEM": "Déconnecter",
             "LANGUAGES": {
                 "LANGUAGE_1": "Anglais",
-                "LANGUAGE_2": "Français"
+                "LANGUAGE_2": "Français",
+                "LANGUAGE_3": "Italien"
             },
             "BACK_ITEM": "Rétour"
         }
@@ -58,7 +59,8 @@
         },
         "FOOTER": {
             "ITEM_1": "Anglais",
-            "ITEM_2": "Français"
+            "ITEM_2": "Français",
+            "ITEM_3": "Italien"
         }
     }
 }

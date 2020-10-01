@@ -1,0 +1,66 @@
+{
+    "APP_TITLE": "Applicazione di pellicole",
+    "TOP_BAR": {
+        "SEARCH": {
+            "PLACEHOLDER": "Cerca film"
+        },
+        "TRENDS": {
+            "ITEM_1": "Film in uscita",
+            "ITEM_2": "Film popolari"
+        },
+        "SETTINGS": {
+            "TITLE": "Impostazioni",
+            "LANGUAGES_ITEM": "Le lingue",
+            "LOGOUT_ITEM": "Disconnettersi",
+            "LANGUAGES": {
+                "LANGUAGE_1": "Inglese",
+                "LANGUAGE_2": "Francese",
+                "LANGUAGE_3": "Italiano"
+            },
+            "BACK_ITEM": "Indietro"
+        }
+    },
+    "MOVIES_CONTENT": {
+        "SORTING": {
+            "TITLE": "Ordina per",
+            "OPTIONS": {
+                "OPTION_1": "Tutti",
+                "OPTION_2": "Positivo",
+                "OPTION_3": "Neutro",
+                "OPTION_4": "Critico"
+            }
+        }
+    },
+    "MOVIE_CARD": {
+        "DETAILS_LINK": "Visualizza dettagli"
+    },
+    "MOVIE_DETAILS": {
+        "WEBSITE_LINK": "Visita il sito web del film",
+        "ORIGINAL_TITLE": "Titolo originale",
+        "GENRE": "Genere",
+        "RATING": "Valutazione",
+        "PRODUCTION_COMPANIES": "Società di produzione",
+        "PRODUCTION_COUNTRIES": "Paesi di produzione",
+        "RELEASE_DATE": "Data di rilascio" 
+    },
+    "LOGIN": {
+        "SIGNUP_DETAILS": {
+            "TITLE": "Non possiedi un account?",
+            "BUTTON": "Iscriviti"
+        },
+        "FORM": {
+            "TITLE": "Ben Tornato!",
+            "EMAIL_LABEL": "Indirizzo email",
+            "PASSWORD_LABEL": "Parola d'ordine",
+            "REMEMBER_ME_CHECKBOX_LABEL": "Resta connesso",
+            "RESET_PASSWORD_LABEL": "Ha dimenticato la password?",
+            "SUBMIT_BUTTON": "Accesso",
+            "ERROR": "Non valido"
+        },
+        "FOOTER": {
+            "ITEM_1": "Inglese",
+            "ITEM_2": "Francese",
+            "ITEM_3": "Italiano"
+        }
+    }
+}

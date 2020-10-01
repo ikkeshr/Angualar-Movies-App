@@ -21,11 +21,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
-// Register the locale information 'fr'
-// Used to present movie release date in french in the movie-details component
+// Register the locale information 'fr' and 'it'
+// Used to present movie release date in french and italian in the movie-details component
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import localeIt from "@angular/common/locales/it";
 registerLocaleData(localeFr, 'fr');
+registerLocaleData(localeIt, 'it');
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);

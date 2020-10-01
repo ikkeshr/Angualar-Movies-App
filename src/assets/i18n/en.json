@@ -14,7 +14,8 @@
             "LOGOUT_ITEM": "Log out",
             "LANGUAGES": {
                 "LANGUAGE_1": "English",
-                "LANGUAGE_2": "French"
+                "LANGUAGE_2": "French",
+                "LANGUAGE_3": "Italian"
             },
             "BACK_ITEM": "Back"
         }
@@ -58,7 +59,8 @@
         },
         "FOOTER": {
             "ITEM_1": "English",
-            "ITEM_2": "French"
+            "ITEM_2": "French",
+            "ITEM_3": "Italian"
         }
     }
 }
