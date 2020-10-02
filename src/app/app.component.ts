@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { TranslationConf } from './configurations/translation-conf';
 
 @Component({
   selector: 'app-root',
@@ -15,16 +16,19 @@ export class AppComponent {
   }
 
   initTranslationService(): void {
+    const translationConf: TranslationConf = new TranslationConf();
 
     // this Browser's language will be used as a fallback when a 
     // translation isn't found in the current language
-    let browserLang = this.translate.getBrowserLang();
+    let defaultLang = this.translate.getBrowserLang();
 
     if (localStorage.getItem("language") !== null) {
-      browserLang = localStorage.getItem("language");
+      defaultLang = localStorage.getItem("language");
+    } else if (!translationConf.getLanguages().includes(defaultLang)) {
+      defaultLang = translationConf.getDefaultLanguage();
     }
-
-    this.translate.setDefaultLang(browserLang);
+    
+    this.translate.setDefaultLang(defaultLang);
     
   }
 

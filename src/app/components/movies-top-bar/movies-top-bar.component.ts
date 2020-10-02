@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
+import { TranslationConf } from '../../configurations/translation-conf';
 
 @Component({
   selector: 'app-movies-top-bar',
@@ -16,11 +17,14 @@ export class MoviesTopBarComponent implements OnInit {
 
   dropSettings: boolean = false;
   showLanguages: boolean = false;
+  translationLanguages: string[];
 
   constructor(
     private router: Router,
     private translate: TranslateService
-  ) {}
+  ) {
+    this.translationLanguages = new TranslationConf().getLanguages();
+  }
 
   ngOnInit(): void {
   }

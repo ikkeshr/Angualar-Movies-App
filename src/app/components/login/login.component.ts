@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FetchJsonService } from '../../services/fetch-json.service';
 import {TranslateService} from '@ngx-translate/core';
+import { TranslationConf } from '../../configurations/translation-conf';
 
 @Component({
   selector: 'app-login',
@@ -20,12 +21,16 @@ export class LoginComponent implements OnInit {
 
   staySignedIn: boolean = false;
 
+  translationLanguages: string[];
+
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private fetchJson: FetchJsonService,
     private translate: TranslateService
-  ) {}
+  ) {
+    this.translationLanguages = new TranslationConf().getLanguages();
+  }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
