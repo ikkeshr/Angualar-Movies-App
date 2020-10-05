@@ -41,7 +41,8 @@
         "RATING": "Valutazione",
         "PRODUCTION_COMPANIES": "Società di produzione",
         "PRODUCTION_COUNTRIES": "Paesi di produzione",
-        "RELEASE_DATE": "Data di rilascio" 
+        "RELEASE_DATE": "Data di rilascio",
+        "RATE_ACTION": "Vota"
     },
     "LOGIN": {
         "SIGNUP_DETAILS": {

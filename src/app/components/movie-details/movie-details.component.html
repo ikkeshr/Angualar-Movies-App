@@ -21,6 +21,18 @@
                     <div class="details-wrap"><span class="details-header">{{ 'MOVIE_DETAILS.PRODUCTION_COUNTRIES' | translate }}:</span><span class="details-content">{{ movieDetails?.get_productionCompaniesStr() }}</span></div>
                     <div class="details-wrap"><span class="details-header">{{ 'MOVIE_DETAILS.RELEASE_DATE' | translate }}:</span><span class="details-content">{{ movieDetails?.get_releaseDate() | date: 'd MMMM y' : '+0200': translate.getDefaultLang() }}</span></div>
                 </div>
+
+                <div class="rate-action" (click)="toggleRatingAction($event)">
+                    <span>{{ 'MOVIE_DETAILS.RATE_ACTION' | translate }}</span>
+                </div>
+                <div class="modal" [class.selected]="showRatingAction" (click)="toggleRatingAction($event)">
+                    <div class="modal-content-wrap">
+                        <div class="modal-content" (click)="$event.stopPropagation()">
+                            <app-movie-rating (cancel)="toggleRatingAction($event)"></app-movie-rating>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
 
 

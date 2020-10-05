@@ -26,6 +26,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import localeIt from "@angular/common/locales/it";
+import { MovieRatingComponent } from './components/movie-rating/movie-rating.component';
 registerLocaleData(localeFr, 'fr');
 registerLocaleData(localeIt, 'it');
 
@@ -46,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ChipComponent,
     MovieDetailsComponent,
     LoginComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    MovieRatingComponent
   ],
   imports: [
     BrowserModule,

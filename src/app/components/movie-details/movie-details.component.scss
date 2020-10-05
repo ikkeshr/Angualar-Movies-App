@@ -46,6 +46,51 @@
                         }
                     }
                 }
+                .rate-action {
+                    background-color: darkgoldenrod;
+                    width: 45px;
+                    text-align: center;
+                    padding: 6px;
+                    border-radius: 16px;
+                    margin-top: 30px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                ///////////////////////////
+                /* The Modal (background) */
+                .modal {
+                    display: none; /* Hidden by default */
+                    position: fixed; /* Stay in place */
+                    z-index: 1; /* Sit on top */
+                    left: 0;
+                    top: 0;
+                    width: 100%; /* Full width */
+                    height: 100%; /* Full height */
+                    overflow: auto; /* Enable scroll if needed */
+                    background-color: rgb(0,0,0); /* Fallback color */
+                    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                    &.selected {
+                        display: block;
+                    }
+
+                    .modal-content-wrap {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+
+                        .modal-content {
+                            padding: 25px;
+                            width: 50%;
+                            border-radius: 15px;
+                            background-color: white;
+                        }
+                    }
+                }
+                //////////////////////////
             }
         }
     }

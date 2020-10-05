@@ -17,6 +17,7 @@ export class MovieDetailsComponent implements OnInit {
 
   // Genre list to pass to sidebar
   genreList: string[];
+  showRatingAction: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -65,6 +66,10 @@ export class MovieDetailsComponent implements OnInit {
 
   openLink(url: string): void {
     window.open(url, "_blank");
+  }
+
+  toggleRatingAction(event): void {
+    this.showRatingAction = !this.showRatingAction;
   }
 
 }

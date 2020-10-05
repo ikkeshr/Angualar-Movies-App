@@ -41,7 +41,8 @@
         "RATING": "Rating",
         "PRODUCTION_COMPANIES": "Production Companies",
         "PRODUCTION_COUNTRIES": "Production Countries",
-        "RELEASE_DATE": "Release Date" 
+        "RELEASE_DATE": "Release Date",
+        "RATE_ACTION": "Rate"
     },
     "LOGIN": {
         "SIGNUP_DETAILS": {
