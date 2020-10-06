@@ -5,11 +5,30 @@
 }
 
 .content-body {
+    padding: 20px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    .stars:hover {
+        cursor: pointer;
+    }
+
+    .display-selected-rating {
+        margin-left: 25px; 
+        font-size: 20px;
+        border: crimson solid 2px;
+        padding: 8px;
+        min-width: 20px;
+        border-radius: 20px;
+        text-align: center;
+    }
 }
 
 .content-footer {
     width: 100%;
+
     .action-btn {
         float: right;
         button {
@@ -33,5 +52,56 @@
             background-color: green;
             margin-right: 10px;
         }
+    }
+    .spinner-wrap {
+        float: right;
+        .loader {
+            border: 6px solid gray;
+            border-radius: 50%;
+            border-top: 6px solid #3498db;
+            width: 30px;
+            height: 30px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+          }
+          
+          /* Safari */
+          @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+          }
+          
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+    }
+
+    .submitted-wrap {
+        display: flex;
+        float: right;
+        color: green;
+
+        span {
+            margin-right: 16px;
+            margin-top: 10px;
+        }
+
+        .check-logo {
+            width: 30px;
+            height: 30px;
+            background: palegreen url("../../../assets/imgs/check-mark.svg") no-repeat center center;
+            border-radius: 50%;
+        }
+    }
+    .error {
+        color: red;
+        text-align: center;
+        padding: 8px; 
+        span {
+            margin-top: 30px;
+            font-size: 20px;
+        }
+        
     }
 }

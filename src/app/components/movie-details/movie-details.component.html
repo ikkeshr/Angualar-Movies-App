@@ -28,7 +28,7 @@
                 <div class="modal" [class.selected]="showRatingAction" (click)="toggleRatingAction($event)">
                     <div class="modal-content-wrap">
                         <div class="modal-content" (click)="$event.stopPropagation()">
-                            <app-movie-rating (cancel)="toggleRatingAction($event)"></app-movie-rating>
+                            <app-movie-rating (cancel)="toggleRatingAction($event)" [movieId]="movieDetails?.get_id()"></app-movie-rating>
                         </div>
                     </div>
                 </div>

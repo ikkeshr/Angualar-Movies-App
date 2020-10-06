@@ -114,10 +114,28 @@ export class FetchJsonService {
     return this.http.get(`https://api.themoviedb.org/3/authentication/token/new?api_key=${this.apiKey}`).pipe(
       map ((response: any) => {
         if (response.request_token) {
+          console.log(response);
           return response.request_token;
         }
       })
     );
+  }
+
+  public postRating(movieId:number, rating: number): Observable<any> {
+    const httpOptions = {
+      params: {
+        api_key: this.apiKey
+      },
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      }
+    };
+
+    const body = {
+      value: rating
+    };
+
+    return this.http.post(`https://api.themoviedb.org/3/movie/${movieId}/rating`, body, httpOptions);
   }
    
 }

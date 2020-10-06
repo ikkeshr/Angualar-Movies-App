@@ -63,5 +63,13 @@
             "ITEM_2": "French",
             "ITEM_3": "Italian"
         }
+    },
+    "MOVIE_RATING": {
+        "TITLE": "Submit Rating",
+        "ERROR_API": "Error, cannot submit rating",
+        "ERROR_INPUT": "Rating must be between 0.5 and 10 starts inclusive",
+        "SUBMIT_BTN_LABEL": "Submit",
+        "CANCEL_BTN_LABEL": "Cancel",
+        "RATING_SUBMITTED_LABEL": "Rating submitted"
     }
 }

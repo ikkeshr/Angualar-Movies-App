@@ -21,6 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
+import { NgxStarsModule } from 'ngx-stars';
+
 // Register the locale information 'fr' and 'it'
 // Used to present movie release date in french and italian in the movie-details component
 import { registerLocaleData } from '@angular/common';
@@ -54,6 +56,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxStarsModule,
     ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {

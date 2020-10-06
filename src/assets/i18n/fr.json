@@ -63,5 +63,13 @@
             "ITEM_2": "Français",
             "ITEM_3": "Italien"
         }
+    },
+    "MOVIE_RATING": {
+        "TITLE": "Soumettre note",
+        "ERROR_API": "Erreur, impossible de soumettre la note",
+        "ERROR_INPUT": "La note doit être entre 0,5 et 10 départs inclus",
+        "SUBMIT_BTN_LABEL": "Soumettre",
+        "CANCEL_BTN_LABEL": "Annuler",
+        "RATING_SUBMITTED_LABEL": "Note soumise"
     }
 }
