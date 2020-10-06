@@ -20,7 +20,7 @@
     <div class="error" *ngIf="showInvalidRatingMsg">
         <span>{{ 'MOVIE_RATING.ERROR_INPUT' | translate }}</span>
     </div>
-    <div class="action-btn" *ngIf="!showLoader">
+    <div class="action-btn" *ngIf="!showLoader && !ratingSubmitted">
         <button class="btn-submit" (click)=submit()>{{ 'MOVIE_RATING.SUBMIT_BTN_LABEL' | translate }}</button>
         <button (click)="cancel()">{{ 'MOVIE_RATING.CANCEL_BTN_LABEL' | translate }}</button>
     </div>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, mergeMap } from 'rxjs/operators';
 import { Movie } from '../dto/movie';
 import { MovieDetails } from '../dto/movie-details';
 import {TranslateService} from '@ngx-translate/core';
@@ -122,20 +122,31 @@ export class FetchJsonService {
   }
 
   public postRating(movieId:number, rating: number): Observable<any> {
-    const httpOptions = {
-      params: {
-        api_key: this.apiKey
-      },
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8'
-      }
-    };
+    return this.http.get(`https://api.themoviedb.org/3/authentication/guest_session/new?api_key=${this.apiKey}`).pipe(
+      mergeMap((response: any) => {
 
-    const body = {
-      value: rating
-    };
+        if (response) {
+          console.log(response);
+          const httpOptions = {
+            params: {
+              api_key: this.apiKey,
+              guest_session_id: response.guest_session_id
+            },
+            headers: {
+              'Content-Type': 'application/json;charset=utf-8'
+            }
+          };
+      
+          const body = {
+            value: rating
+          };
+  
+          return this.http.post(`https://api.themoviedb.org/3/movie/${movieId}/rating`, body, httpOptions);
+        }
 
-    return this.http.post(`https://api.themoviedb.org/3/movie/${movieId}/rating`, body, httpOptions);
+      })
+    );
+
   }
    
 }

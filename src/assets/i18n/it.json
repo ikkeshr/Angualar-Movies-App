@@ -67,7 +67,7 @@
     "MOVIE_RATING": {
         "TITLE": "Valutazione inviata",
         "ERROR_API": "Errore, impossibile inviare la valutazione",
-        "ERROR_INPUT": "La valutazione deve essere compresa tra 0,5 e 10 avviamenti inclusi",
+        "ERROR_INPUT": "La valutazione deve essere compresa tra 0.5 e 10 stelle incluse",
         "SUBMIT_BTN_LABEL": "Invia",
         "CANCEL_BTN_LABEL": "Annulla",
         "RATING_SUBMITTED_LABEL": "Valutazione inviata"
