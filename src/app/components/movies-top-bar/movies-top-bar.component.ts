@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
 import { TranslationConf } from '../../configurations/translation-conf';
 
@@ -21,12 +21,18 @@ export class MoviesTopBarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private route: ActivatedRoute
   ) {
     this.translationLanguages = new TranslationConf().getLanguages();
+    // this.route.params.subscribe(params => {
+    //   console.log(params);
+      
+    // });
   }
 
   ngOnInit(): void {
+    
   }
 
   toggleSettings(): void {
@@ -34,12 +40,13 @@ export class MoviesTopBarComponent implements OnInit {
   }
 
   searchMovieByTitle(movieTitle: string): void {
-    this.searchMovieTitle.emit(movieTitle);
+    // this.searchMovieTitle.emit(movieTitle);
+    this.router.navigate([`/search/${movieTitle}`]);
   }
 
   showTrending(value: string): void {
     this.trendItemSelected = value;
-    this.selectedTrending.emit(value);
+    this.router.navigate([`/trend/${value}`]);
   }
 
   toggleLanguages(): void {

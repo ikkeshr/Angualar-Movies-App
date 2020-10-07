@@ -1,9 +1,11 @@
 <div class="movies-page">
-    <app-movies-top-bar (searchMovieTitle)="getSearchValue($event)" (selectedTrending)="getTrendSelected($event)" [trendItemSelected]="topMenuSelectedTread"></app-movies-top-bar>
+    <!-- <app-movies-top-bar (searchMovieTitle)="getSearchValue($event)" (selectedTrending)="getTrendSelected($event)" [trendItemSelected]="topMenuSelectedTread"></app-movies-top-bar> -->
+    <app-movies-top-bar></app-movies-top-bar>
     
     <div class="movies-page-body">
-        <app-movies-sidebar (newItemEvent)="setTextFromSideMenu($event)" [movieGenres]="movieGenres" [itemSelected]="sideMenuSelectedGenre"></app-movies-sidebar>
-        <app-movies-content [title]="textFromSideMenu" [moviesToDisplay]="moviesListToDisplay"></app-movies-content>
+        <app-movies-sidebar ></app-movies-sidebar>
+        <!-- <app-movies-content [title]="textFromSideMenu" [moviesToDisplay]="moviesListToDisplay"></app-movies-content> -->
+        <router-outlet></router-outlet>
     </div>
 
 </div>

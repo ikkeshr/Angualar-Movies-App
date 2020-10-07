@@ -1,8 +1,6 @@
 <div class="movie-details-page">
-    <app-movies-top-bar [showSearch]="false" (selectedTrending)="selectedTrendFromTopBar($event)"></app-movies-top-bar>
     
     <div class="movie-details-page-body">
-        <app-movies-sidebar (newItemEvent)="selectedGenreFromSideMenu($event)" [movieGenres]="genreList"></app-movies-sidebar>
         <div class="movie-details-page-content">
             
             <div class="movie-poster-wrap">

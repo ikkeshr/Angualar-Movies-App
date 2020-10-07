@@ -4,5 +4,7 @@
     <a class="side-item" (click)="changeColor('Coming Soon')" [class.selected]="nameSelected === 'Coming Soon'">Coming Soon</a>
     <a class="side-item" (click)="changeColor('Favourites')" [class.selected]="nameSelected === 'Favourites'">Favourites</a>
     <a class="side-item" (click)="changeColor('Watch Later')" [class.selected]="nameSelected === 'Watch Later'">Watch Later</a> -->
-    <a *ngFor="let genre of movieGenres" class="side-item" (click)="changeColor(genre)" [class.selected]="nameSelected === genre">{{ genre }}</a>
+
+    <!-- <a *ngFor="let genre of movieGenres" class="side-item" [routerLink]="['/genre', genre]" routerLinkActive="side-item-active">{{ genre }}</a> -->
+    <a *ngFor="let genre of movieGenres" class="side-item" (click)="selectGenre(genre)" [class.selected]="nameSelected === genre">{{ genre }}</a>
 </div>
