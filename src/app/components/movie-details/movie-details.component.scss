@@ -13,13 +13,14 @@
             .movie-poster-wrap {
                 min-width: 300px;
                 overflow: hidden;
-                .movie-homepage {
+                .movie-link {
                     cursor: pointer;
                     color: white;
                     text-align: center;
                     width: 100%;
                     background-color: #ff424f;
                     padding: 8px 4px 8px 4px;
+                    margin-bottom: 6px;
                 }
             }
 

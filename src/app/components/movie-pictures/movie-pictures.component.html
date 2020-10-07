@@ -1,0 +1,17 @@
+<div class="root">
+    <div class="image-wrap" *ngFor="let img of imageObject; let i = index" (click)="showLightbox(i)">
+        <img  class="image-tag"
+            [src]="img.thumbImage" 
+            alt="Image not found" 
+            onerror="this.error=null;this.src='https://www.publicdomainpictures.net/pictures/280000/nahled/not-found-image-15383864787lu.jpg';"
+        >
+    </div>
+
+    <ng-image-fullscreen-view
+        [images]="imageObject"
+        [imageIndex]="currentIndex"
+        [show]="showFlag"
+        [animationSpeed]=0.1
+        [paginationShow]=true
+        (close)="closeEventHandler()"></ng-image-fullscreen-view>
+</div>

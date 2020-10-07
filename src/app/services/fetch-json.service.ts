@@ -148,5 +148,23 @@ export class FetchJsonService {
     );
 
   }
+
+  public getMovieImages(movieId: number): Observable<Object[]> {
+    const url = `https://api.themoviedb.org/3/movie/${movieId}/images?api_key=${this.apiKey}`;
+    return this.http.get(url).pipe(
+      map ((response: any) => {
+        if (response) {
+          let posters: Object[] = [];
+          response.backdrops.forEach(element => {
+            posters.push({
+              image: `http://image.tmdb.org/t/p/original/${element.file_path}?api_key=${this.apiKey}`,
+              thumbImage: `http://image.tmdb.org/t/p/w300/${element.file_path}?api_key=${this.apiKey}`
+            });
+          });
+          return posters;
+        }
+      })
+    );
+  }
    
 }

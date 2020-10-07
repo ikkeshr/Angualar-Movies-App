@@ -29,12 +29,15 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import localeIt from "@angular/common/locales/it";
 import { MovieRatingComponent } from './components/movie-rating/movie-rating.component';
+import { MoviePicturesComponent } from './components/movie-pictures/movie-pictures.component';
 registerLocaleData(localeFr, 'fr');
 registerLocaleData(localeIt, 'it');
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
+
+import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
 
 @NgModule({
   declarations: [
@@ -50,12 +53,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     MovieDetailsComponent,
     LoginComponent,
     CheckboxComponent,
-    MovieRatingComponent
+    MovieRatingComponent,
+    MoviePicturesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgImageFullscreenViewModule,
     NgxStarsModule,
     ReactiveFormsModule,
     TranslateModule.forRoot({

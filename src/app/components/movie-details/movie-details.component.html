@@ -5,7 +5,8 @@
             
             <div class="movie-poster-wrap">
                 <img [src]="movieDetails?.get_posterUrl()"/>
-                <div class="movie-homepage" (click)="openLink(movieDetails?.get_homepage())">{{ 'MOVIE_DETAILS.WEBSITE_LINK' | translate }}</div>
+                <div class="movie-link" (click)="openLink(movieDetails?.get_homepage())">{{ 'MOVIE_DETAILS.WEBSITE_LINK' | translate }}</div>
+                <div class="movie-link" routerLink="/movie/{{movieDetails?.get_id()}}/pictures">Gallery</div>
             </div>
 
             <div class="movie-details-wrap">
